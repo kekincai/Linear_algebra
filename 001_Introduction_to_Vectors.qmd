@@ -1,0 +1,120 @@
+# Introduction to Vectors
+
+## Vectors and Linear Combinations
+**线性代数的核心操作是向量加法及向量组合。**
+
+假设两个向量$\boldsymbol{v}$, $\boldsymbol{w}$, 以及两个数值$c$，$d$。可以有下面的线性组合。
+$$c\boldsymbol{v} + d\boldsymbol{w} = 
+c\begin{bmatrix}
+ 1 \\ 1 
+\end{bmatrix}   +
+d\begin{bmatrix}
+ 2 \\ 3 
+\end{bmatrix}   =
+\begin{bmatrix}
+ c + 2d \\ c + 3d 
+\end{bmatrix}
+$$
+
+在R语言中，我们可以如下实现。
+```{r}
+# c()函数可以创建或合并向量
+v <- c(1, 1)
+w <- c(2, 3)
+print(v + w)
+```
+
+```{r}
+c <- 2 # 这里给c赋值，不用担心，c函数跟c变量R语言可以区分出来，但是一般不要这么做。
+d <- 1
+print(c * v + d * w)
+```
+
+**向量组合符合平行四边形定则，我们试着在坐标轴上将向量组合画出来。**
+$$\boldsymbol{w} + \boldsymbol{v} = 
+\begin{bmatrix}
+ -1 \\ 2 
+\end{bmatrix}   +
+\begin{bmatrix}
+ 4 \\ 2 
+\end{bmatrix}   =
+\begin{bmatrix}
+ 3 \\ 4 
+\end{bmatrix}
+$$
+
+```{r, echo=FALSE}
+# 定义点的坐标
+x_coords <- c(-1, 4, 3)
+y_coords <- c(2, 2, 4)
+
+# 绘制图形，不带坐标轴
+plot(
+    x = x_coords, y = y_coords,
+    xlab = "", ylab = "",
+    xlim = c(-2, 5), ylim = c(-1, 5),
+    axes = FALSE, type = "n"
+)
+
+# 去除边框
+box(bty = "n")
+
+# 添加x=0和y=0的坐标轴
+abline(h = 0, v = 0, col = "black", lwd = 1)
+
+# 手动为x=0和y=0的坐标轴上添加刻度，并标记数值
+for (i in seq(-1, 5, 1)) {
+    if (i != 0) {
+        # y轴上的刻度和数值
+        segments(x0 = -0.1, x1 = 0.1, y0 = i, y1 = i)
+        text(
+            x = -0.3, y = i, labels = i,
+            srt = 0, adj = 1, xpd = TRUE
+        )
+    }
+}
+
+for (i in seq(-1, 5, 1)) {
+    # x轴上的刻度和数值
+    segments(x0 = i, x1 = i, y0 = -0.1, y1 = 0.1)
+    text(x = i, y = -0.3, labels = i, xpd = TRUE)
+}
+
+# y轴标签水平放置
+text(5, -1, "x",
+    srt = 0, adj = 1, font = 2, xpd = TRUE
+)
+text(0, 6, "y",
+    font = 2, xpd = TRUE
+)
+
+# 从原点到前两个点引出箭头
+arrows(
+    x0 = 0, y0 = 0, x1 = x_coords[1:2], y1 = y_coords[1:2],
+    angle = 20, length = 0.1
+)
+
+# 从原点到(3, 4)的点引出粗线并使用steelblue颜色
+arrows(
+    x0 = 0, y0 = 0, x1 = x_coords[3], y1 = y_coords[3],
+    angle = 20, length = 0.1, col = "steelblue", lwd = 2
+)
+
+# 引入w到w+v，以及v到w+v的虚线
+segments(x_coords[1], y_coords[1], x_coords[3], y_coords[3], lty = 2)
+segments(x_coords[2], y_coords[2], x_coords[3], y_coords[3], lty = 2)
+
+# 在点的位置标记线段名称，并加粗
+labels <- c(
+    expression(bold(w)),
+    expression(bold(v)),
+    expression(bold(w + v))
+)
+text(x_coords, y_coords, labels,
+    pos = 4, offset = 0.5, font = 2
+)
+
+```
+
+## Lengths and Dot Products
+## Matrices
