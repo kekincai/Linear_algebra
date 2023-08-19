@@ -3,13 +3,11 @@ project:
 
 book:
   title: "R语言线性代数"
-  author: "柯金才"
+  author: "金太阳无敌"
   date: "8/19/2023"
   chapters:
     - index.qmd
     - 001_Introduction_to_Vectors.qmd
-    - intro.qmd
-    - summary.qmd
     - references.qmd
 
 bibliography: references.bib
