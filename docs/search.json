@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "R语言线性代数",
     "section": "",
-    "text": "Preface\n\n参照《Introduction to Linear Algebra, Fifth Edition》，用R语言再说明。\n本书尽量使用base R。"
+    "text": "Preface\n\n参照《Introduction to Linear Algebra, Fifth Edition》，用R语言再说明。\n本书尽量使用base R。\n本书代码执行环境：\n\n\n\n    machine  : arm64\n    platform : aarch64-apple-darwin20\n    version  : R version 4.3.1 (2023-06-16)\n               Beagle Scouts"
   },
   {
     "objectID": "001_Introduction_to_Vectors.html#vectors-and-linear-combinations",
