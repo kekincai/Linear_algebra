@@ -45,12 +45,12 @@ $$
 
 ```{r, echo=FALSE}
 # 定义点的坐标
-x_coords <- c(-1, 4, 3)
-y_coords <- c(2, 2, 4)
+x <- c(-1, 4, 3)
+y <- c(2, 2, 4)
 
 # 绘制图形，不带坐标轴
 plot(
-    x = x_coords, y = y_coords,
+    x = x, y = y,
     xlab = "", ylab = "",
     xlim = c(-2, 5), ylim = c(-1, 5),
     axes = FALSE, type = "n"
@@ -90,19 +90,19 @@ text(0, 6, "y",
 
 # 从原点到前两个点引出箭头
 arrows(
-    x0 = 0, y0 = 0, x1 = x_coords[1:2], y1 = y_coords[1:2],
+    x0 = 0, y0 = 0, x1 = x[1:2], y1 = y[1:2],
     angle = 20, length = 0.1
 )
 
 # 从原点到(3, 4)的点引出粗线并使用steelblue颜色
 arrows(
-    x0 = 0, y0 = 0, x1 = x_coords[3], y1 = y_coords[3],
+    x0 = 0, y0 = 0, x1 = x[3], y1 = y[3],
     angle = 20, length = 0.1, col = "steelblue", lwd = 2
 )
 
 # 引入w到w+v，以及v到w+v的虚线
-segments(x_coords[1], y_coords[1], x_coords[3], y_coords[3], lty = 2)
-segments(x_coords[2], y_coords[2], x_coords[3], y_coords[3], lty = 2)
+segments(x[1], y[1], x[3], y[3], lty = 2)
+segments(x[2], y[2], x[3], y[3], lty = 2)
 
 # 在点的位置标记线段名称，并加粗
 labels <- c(
@@ -110,7 +110,7 @@ labels <- c(
     expression(bold(v)),
     expression(bold(w + v))
 )
-text(x_coords, y_coords, labels,
+text(x, y, labels,
     pos = 4, offset = 0.5, font = 2
 )
 
