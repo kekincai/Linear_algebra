@@ -18,7 +18,7 @@
     "href": "001_Introduction_to_Vectors.html#lengths-and-dot-products",
     "title": "1  Introduction to Vectors",
     "section": "1.2 Lengths and Dot Products",
-    "text": "1.2 Lengths and Dot Products"
+    "text": "1.2 Lengths and Dot Products\n向量的点乘(内积)是向量对应位置元素相乘的和。 \\[\n\\boldsymbol{v} = \\begin{bmatrix}\n                    v_1 \\\\ v_2\n                    \\end{bmatrix},\n\\boldsymbol{w} = \\begin{bmatrix}\n                    w_1 \\\\ w_2\n                    \\end{bmatrix}\n\\] \\[\n\\boldsymbol{v} \\cdot \\boldsymbol{w} = v_1w_1 + v_2w_2\n\\]\n\n\n\n\n\n\nTip\n\n\n\n从上式可知，向量的点乘满足交换律。\n\n\n向量的模(magnitude) \\[\n\\left|\\left| \\boldsymbol{v} \\right|\\right| = \\sqrt{v_1^2 + v_2^2}\n\\]"
   },
   {
     "objectID": "001_Introduction_to_Vectors.html#matrices",

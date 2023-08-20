@@ -117,4 +117,28 @@ text(x, y, labels,
 ```
 
 ## Lengths and Dot Products
+**向量的点乘(内积)是向量对应位置元素相乘的和。**
+$$
+\boldsymbol{v} = \begin{bmatrix}
+                    v_1 \\ v_2 
+                    \end{bmatrix}, 
+\boldsymbol{w} = \begin{bmatrix}
+                    w_1 \\ w_2 
+                    \end{bmatrix}
+$$
+$$
+\boldsymbol{v} \cdot \boldsymbol{w} = v_1w_1 + v_2w_2
+$$
+
+:::{.callout-tip}
+从上式可知，向量的点乘满足交换律。
+:::
+
+**向量的模(magnitude)**
+$$
+\left|\left| \boldsymbol{v} \right|\right| = \sqrt{v_1^2 + v_2^2}
+$$
+
+
+
 ## Matrices
