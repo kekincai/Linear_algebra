@@ -10,6 +10,7 @@ book:
     - index.qmd
     - 001_Introduction_to_Vectors.qmd
     - references.qmd
+  cover-image: cover.png
 
 bibliography: references.bib
 
